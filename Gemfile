@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 group :development, :production do
-  gem 'virtuatable-core', path: '../core', require: 'core'
+  gem 'virtuatable-core', '1.5.0', require: 'core'
   gem 'puma'
   gem 'dotenv'
   gem 'pry'
