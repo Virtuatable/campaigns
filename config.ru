@@ -1,5 +1,5 @@
 require 'dotenv'
-environment = Dotenv.load['RACK_ENV'] || :development
+environment = ENV['RACK_ENV'] || :development
 
 require 'bundler'
 Bundler.require environment
