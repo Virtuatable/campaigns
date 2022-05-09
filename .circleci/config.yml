@@ -43,10 +43,10 @@ jobs:
           command: echo "export DOCKER_TAG=$(date +%s)" >> $BASH_ENV
       - run:
           name: Build the image to be able to push it online
-          command: wget ${DOCKERFILE} && docker build -t virtuatable/auth-api:${DOCKER_TAG} -f Dockerfile .
+          command: wget ${DOCKERFILE} && docker build -t virtuatable/campaigns:${DOCKER_TAG} -f Dockerfile .
       - run:
           name: Push the image to the DockerHub DTR
-          command: docker push virtuatable/auth-api:${DOCKER_TAG}
+          command: docker push virtuatable/campaigns:${DOCKER_TAG}
       - run:
           name: Deploys the application on Kubernetes
           command: curl ${DEPLOYMENT_URL} | erb service=campaigns version=${DOCKER_TAG} - | kubectl apply -f -
