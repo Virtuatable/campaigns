@@ -55,7 +55,7 @@ jobs:
           command: curl ${SERVICE_URL} | erb service=campaigns - | kubectl apply -f -
       - run:
           name: Creates the ingress to access the app
-          command: curl ${INGRESS_URL} | erb service=campaigns prefix=/campaigns - | kubectl apply -f -
+          command: curl ${INGRESS_URL} | erb service=campaigns prefix=/api/campaigns - | kubectl apply -f -
 
 workflows:
   build:
